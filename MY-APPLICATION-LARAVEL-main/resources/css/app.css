@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "bankGothic", sans-serif;
+}
+
+:root {
+    --Primary: #00A2FF;
+    --Primary01: #FF8E50;
+    --Primary02: #FFBB8C;
+    --Primary03: #FFE7C7;
+
+    --Black: #0D0D0D;
+    --Black01: #3E4142;
+    --Black02: #7C8184;
+    --Black03: #BAC2C6;
+
+    --White: #F4F4F4;
+    --White01: #DADAD7;
+    --White02: #E9E8E7;
+    --White03: #F7F7F7;
+
+    --bg-blur: #0D0D0D;
+    --bg-dots: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='%23000000'/%3E%3C/svg%3E");
+}
+
+body {
+    background: var(--p-primary-contrast-color);
+}
+
+.bg-blur {
+    background: rgba(13, 13, 13, 0.7); /* Noir avec 70% d'opacité */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Pour Safari */
+}
+.bg-dots {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0); /* Fond du div normal */
+}
+
+.bg-dots::before {
+    opacity: 0.2;
+    content: "";
+    color: #74f011;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor; /* Couleur du pattern */
+
+    -webkit-mask-image: var(--bg-dots);
+    mask-image: var(--bg-dots);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.p-scrollpanel-bar {
+    background: none !important;
+    position: relative;
+}
+
+.p-scrollpanel-bar::before {
+    content: "";
+    background: currentColor;
+    width: 8px !important;
+    height: 30px !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+
+.p-password-input, .p-password-input {
+    width: 100% !important;
+}

@@ -1,0 +1,30 @@
+    Animation pour le bouton de bascule
+    .fi-sidebar-item-button {
+        transition: transform 0.3s ease-out;
+    }
+
+    .fi-sidebar-item-button.open {
+        transform: rotate(180deg);
+    }
+
+    /* Animation pour l'affichage du sous-menu avec effet de glissement (slide down) */
+    .submenu {
+        max-height: 0; /* Cache le sous-menu au départ */
+        overflow: hidden; /* Empêche tout débordement */
+        opacity: 0; /* Rend invisible */
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transition de max-height et opacité */
+    }
+
+    .submenu.open {
+        max-height: 500px; /* Augmente la hauteur du sous-menu pour le rendre visible */
+        opacity: 1; /* Rendre visible */
+    }
+
+    /* On ajoute l'effet de rotation de l'icône de l'angle */
+    .fi-icon-btn {
+        transition: transform 0.3s ease-out;
+    }
+
+    .fi-icon-btn.open {
+        transform: rotate(360deg); /* Rotation de l'icône */
+    }
